@@ -17,12 +17,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/me', function(){
-    return ['Nama' => 'Alvin Risnu Izaz', 
-    'Kelas' => 'XII RPL 1', 
-    'Absen' => '13',
-    'Alamat' => 'Sokaraja',
-    'Gender' => 'Laki Laki'];
-});
-
-Route::get('auth', 'AuthController@me'); 
+Route::resource('books', 'BookController'); 
